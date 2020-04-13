@@ -1220,7 +1220,7 @@ static const unsigned int mips_isa_table[] = {
 #undef ISAF
 
 /* Masks used for Chip specific instructions.  */
-#define INSN_CHIP_MASK		  0xc7ff4f60
+#define INSN_CHIP_MASK		  0xdfff4f60
 
 /* Cavium Networks Octeon instructions.  */
 #define INSN_OCTEON		  0x00000800
@@ -1260,6 +1260,9 @@ static const unsigned int mips_isa_table[] = {
 #define INSN_XLR                 0x00000020
 /* Imagination interAptiv MR2.  */
 #define INSN_INTERAPTIV_MR2	  0x04000000
+/* Lexra & Realtek Lexra instruction.  */
+#define INSN_LX                0x08000000
+#define INSN_RLX               0x10000000
 
 /* DSP ASE */
 #define ASE_DSP			0x00000001
@@ -1384,6 +1387,12 @@ static const unsigned int mips_isa_table[] = {
 #define CPU_OCTEON3	6503
 #define CPU_XLR     	887682   	/* decimal 'XLR'   */
 #define CPU_INTERAPTIV_MR2 736550	/* decimal 'IA2'  */
+#define CPU_LX4180		104180
+#define CPU_RLX4181		104181
+#define CPU_RLX4281		104281
+#define CPU_RLX5181		105181
+#define CPU_LX5280		105280
+#define CPU_RLX5281		105281
 
 /* Return true if the given CPU is included in INSN_* mask MASK.  */
 
@@ -1453,6 +1462,16 @@ cpu_is_member (int cpu, unsigned int mask)
 
     case CPU_INTERAPTIV_MR2:
       return (mask & INSN_INTERAPTIV_MR2) != 0;
+
+    case CPU_LX4180:
+      return (mask & INSN_LX) != 0;
+
+    case CPU_RLX4181:
+    case CPU_RLX4281:
+    case CPU_RLX5181:
+    case CPU_LX5280:
+    case CPU_RLX5281:
+      return (mask & INSN_RLX) != 0;
 
     case CPU_MIPS32R6:
       return (mask & INSN_ISA_MASK) == INSN_ISA32R6;

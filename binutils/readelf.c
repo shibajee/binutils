@@ -3446,6 +3446,12 @@ get_machine_flags (Filedata * filedata, unsigned e_flags, unsigned e_machine)
 	    case E_MIPS_MACH_OCTEON3: strcat (buf, ", octeon3"); break;
 	    case E_MIPS_MACH_XLR:  strcat (buf, ", xlr"); break;
 	    case E_MIPS_MACH_IAMR2:  strcat (buf, ", interaptiv-mr2"); break;
+	    case E_MIPS_MACH_LX4180:  strcat (buf, ", lx4180"); break;
+	    case E_MIPS_MACH_RLX4181:  strcat (buf, ", rlx4181"); break;
+	    case E_MIPS_MACH_RLX4281:  strcat (buf, ", rlx4281"); break;
+	    case E_MIPS_MACH_RLX5181:  strcat (buf, ", rlx5181"); break;
+	    case E_MIPS_MACH_LX5280:  strcat (buf, ", lx5280"); break;
+	    case E_MIPS_MACH_RLX5281:  strcat (buf, ", rlx5281"); break;
 	    case 0:
 	    /* We simply ignore the field in this case to avoid confusion:
 	       MIPS ELF does not specify EF_MIPS_MACH, it is a GNU
@@ -16195,6 +16201,24 @@ print_mips_isa_ext (unsigned int isa_ext)
       break;
     case AFL_EXT_INTERAPTIV_MR2:
       fputs ("Imagination interAptiv MR2", stdout);
+      break;
+    case AFL_EXT_LX4180:
+      fputs ("Lexra LX4180", stdout);
+      break;
+    case AFL_EXT_RLX4181:
+      fputs ("Realtek Lexra RLX4181", stdout);
+      break;
+    case AFL_EXT_RLX4281:
+      fputs ("Realtek Lexra RLX4281", stdout);
+      break;
+    case AFL_EXT_RLX5181:
+      fputs ("Realtek Lexra RLX5181", stdout);
+      break;
+    case AFL_EXT_LX5280:
+      fputs ("Lexra LX5280", stdout);
+      break;
+    case AFL_EXT_RLX5281:
+      fputs ("Realtek Lexra RLX5281", stdout);
       break;
     default:
       fprintf (stdout, "%s (%d)", _("Unknown"), isa_ext);

@@ -185,6 +185,12 @@ DESCRIPTION
 .#define bfd_mach_mips_octeon3		6503
 .#define bfd_mach_mips_xlr		887682	 {* decimal 'XLR'.  *}
 .#define bfd_mach_mips_interaptiv_mr2	736550	 {* decimal 'IA2'.  *}
+.#define bfd_mach_mips_lx4180		104180
+.#define bfd_mach_mips_rlx4181		104181
+.#define bfd_mach_mips_rlx4281		104281
+.#define bfd_mach_mips_rlx5181		105181
+.#define bfd_mach_mips_lx5280		105280
+.#define bfd_mach_mips_rlx5281		105281
 .#define bfd_mach_mipsisa32		32
 .#define bfd_mach_mipsisa32r2		33
 .#define bfd_mach_mipsisa32r3		34

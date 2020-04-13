@@ -203,6 +203,7 @@ decode_mips16_operand (char type, bfd_boolean extended_p)
 #define I64	INSN_ISA64
 #define T3	INSN_3900
 #define IAMR2	INSN_INTERAPTIV_MR2
+#define LXRLX	INSN_LX | INSN_RLX
 
 #define E2	ASE_MIPS16E2
 #define E2MT	ASE_MIPS16E2_MT
@@ -258,6 +259,7 @@ const struct mips_opcode mips16_opcodes[] =
 {"bne",     "x,I,p",	0, (int) M_BNE_I,	INSN_MACRO,		0,		I1,	0,	0 },
 {"bnez",    "x,p",	0x2800, 0xf800,		RD_1,			CBR,		I1,	0,	0 },
 {"break",   "",		0xe805, 0xffff,		TRAP,			SH,		I1,	0,	0 },
+{"break",   "",		0xe805, 0xffff,		TRAP,			0,		LXRLX,	0,	0 },
 {"break",   "6",	0xe805, 0xf81f,		TRAP,			SH,		I1,	0,	0 },
 {"bteqz",   "p",	0x6000, 0xff00,		RD_T,			CBR,		I1,	0,	0 },
 {"btnez",   "p",	0x6100, 0xff00,		RD_T,			CBR,		I1,	0,	0 },
@@ -366,6 +368,10 @@ const struct mips_opcode mips16_opcodes[] =
 {"lwl",	    "x,9(r)",	0xf00090e0, 0xfe18f8e0,	WR_1|RD_3,		0,		0,	E2,	0 },
 {"lwr",	    "x,9(r)",	0xf01090e0, 0xfe18f8e0,	WR_1|RD_3,		0,		0,	E2,	0 },
 {"lwu",     "y,W(x)",	0xb800, 0xf800,		WR_1|RD_3, 		0,		I3,	0,	0 },
+{"madh",    "x,y",	0xf800, 0xf81f,		RD_1|RD_2|WR_HI|WR_LO,	0,		LXRLX,	0,	0 },
+{"madl",    "x,y",	0xf802, 0xf81f,		RD_1|RD_2|WR_HI|WR_LO,	0,		LXRLX,	0,	0 },
+{"mazh",    "x,y",	0xf804, 0xf81f,		RD_1|RD_2|WR_HI|WR_LO,	0,		LXRLX,	0,	0 },
+{"mazl",    "x,y",	0xf806, 0xf81f,		RD_1|RD_2|WR_HI|WR_LO,	0,		LXRLX,	0,	0 },
 {"mfc0",    "y,N",	0xf0006700, 0xffffff00,	WR_1|RD_C0,		0,		0,	E2,	0 },
 {"mfc0",    "y,N,O",	0xf0006700, 0xff1fff00,	WR_1|RD_C0,		0,		0,	E2,	0 },
 {"mfhi",    "x",	0xe810, 0xf8ff,		WR_1|RD_HI,		SH,		I1,	0,	0 },
@@ -380,6 +386,10 @@ const struct mips_opcode mips16_opcodes[] =
 {"movtz",   "x,r",	0xf0203016, 0xfff8f8ff,	WR_1|RD_2|RD_T,		0,		0,	E2,	0 },
 {"movz",    "x,.,w",	0xf0003006, 0xfffff81f,	WR_1|RD_2|RD_3,		0,		0,	E2,	0 },
 {"movz",    "x,r,w",	0xf0203006, 0xfff8f81f,	WR_1|RD_2|RD_3,		0,		0,	E2,	0 },
+{"msbh",    "x,y",	0xf810, 0xf81f,		RD_1|RD_2|WR_HI|WR_LO,	0,		LXRLX,	0,	0 },
+{"msbl",    "x,y",	0xf812, 0xf81f,		RD_1|RD_2|WR_HI|WR_LO,	0,		LXRLX,	0,	0 },
+{"mszh",    "x,y",	0xf814, 0xf81f,		RD_1|RD_2|WR_HI|WR_LO,	0,		LXRLX,	0,	0 },
+{"mszl",    "x,y",	0xf816, 0xf81f,		RD_1|RD_2|WR_HI|WR_LO,	0,		LXRLX,	0,	0 },
 {"mtc0",    "y,N",	0xf0016700, 0xffffff00,	RD_1|WR_C0,		0,		0,	E2,	0 },
 {"mtc0",    "y,N,O",	0xf0016700, 0xff1fff00,	RD_1|WR_C0,		0,		0,	E2,	0 },
 {"mul",     "z,v,y",	0, (int) M_MUL, 	INSN_MACRO,		0,		I1,	0,	0 },

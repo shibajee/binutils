@@ -107,6 +107,12 @@ enum
   I_mipsocteon3,
   I_xlr,
   I_interaptiv_mr2,
+  I_lx4180,
+  I_rlx4181,
+  I_rlx4281,
+  I_rlx5181,
+  I_lx5280,
+  I_rlx5281,
   I_micromips
 };
 
@@ -162,6 +168,12 @@ static const bfd_arch_info_type arch_info_struct[] =
   N (64, 64, bfd_mach_mips_xlr, "mips:xlr",	  FALSE, NN(I_xlr)),
   N (32, 32, bfd_mach_mips_interaptiv_mr2, "mips:interaptiv-mr2", FALSE,
      NN(I_interaptiv_mr2)),
+  N (32, 32, bfd_mach_mips_lx4180, "mips:lx4180", FALSE, NN(I_lx4180)),
+  N (32, 32, bfd_mach_mips_rlx4181, "mips:rlx4181", FALSE, NN(I_rlx4181)),
+  N (32, 32, bfd_mach_mips_rlx4281, "mips:rlx4281", FALSE, NN(I_rlx4281)),
+  N (32, 32, bfd_mach_mips_rlx5181, "mips:rlx5181", FALSE, NN(I_rlx5181)),
+  N (32, 32, bfd_mach_mips_lx5280, "mips:lx5280", FALSE, NN(I_lx5280)),
+  N (32, 32, bfd_mach_mips_rlx5281, "mips:rlx5281", FALSE, NN(I_rlx5281)),
   N (64, 64, bfd_mach_mips_micromips,"mips:micromips",FALSE,0)
 };
 

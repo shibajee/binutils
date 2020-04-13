@@ -19995,6 +19995,12 @@ static const struct mips_cpu_info mips_cpu_info_table[] =
   { "r3000",          0, 0,			ISA_MIPS1,    CPU_R3000 },
   { "r2000",          0, 0,			ISA_MIPS1,    CPU_R3000 },
   { "r3900",          0, 0,			ISA_MIPS1,    CPU_R3900 },
+  { "lx4180",         0, 0,			ISA_MIPS1,    CPU_LX4180 },
+  { "rlx4181",        0, 0,			ISA_MIPS1,    CPU_RLX4181 },
+  { "rlx4281",        0, 0,			ISA_MIPS1,    CPU_RLX4281 },
+  { "rlx5181",        0, 0,			ISA_MIPS1,    CPU_RLX5181 },
+  { "lx5280",         0, 0,			ISA_MIPS1,    CPU_LX5280 },
+  { "rlx5281",        0, 0,			ISA_MIPS1,    CPU_RLX5281 },
 
   /* MIPS II */
   { "r6000",          0, 0,			ISA_MIPS2,    CPU_R6000 },
