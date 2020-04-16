@@ -11950,11 +11950,31 @@ macro (struct mips_cl_insn *ip, char *str)
       coproc = 1;
       goto ld_st;
     case M_LWL_AB:
+      if (mips_opts.arch == CPU_LX4180	\
+          || mips_opts.arch == CPU_RLX4181	\
+          || mips_opts.arch == CPU_RLX4281	\
+          || mips_opts.arch == CPU_RLX5181	\
+          || mips_opts.arch == CPU_LX5280	\
+          || mips_opts.arch == CPU_RLX5281)
+	{
+	  as_bad (_("Lexra/RLX processors don't support this"));
+	  break;
+	}
       s = "lwl";
       fmt = MEM12_FMT;
       offbits = (mips_opts.micromips ? 12 : 16);
       goto ld_st;
     case M_LWR_AB:
+      if (mips_opts.arch == CPU_LX4180	\
+          || mips_opts.arch == CPU_RLX4181	\
+          || mips_opts.arch == CPU_RLX4281	\
+          || mips_opts.arch == CPU_RLX5181	\
+          || mips_opts.arch == CPU_LX5280	\
+          || mips_opts.arch == CPU_RLX5281)
+	{
+	  as_bad (_("Lexra/RLX processors don't support this"));
+	  break;
+	}
       s = "lwr";
       fmt = MEM12_FMT;
       offbits = (mips_opts.micromips ? 12 : 16);
@@ -12115,11 +12135,31 @@ macro (struct mips_cl_insn *ip, char *str)
       coproc = 1;
       goto ld_st;
     case M_SWL_AB:
+      if (mips_opts.arch == CPU_LX4180	\
+          || mips_opts.arch == CPU_RLX4181	\
+          || mips_opts.arch == CPU_RLX4281	\
+          || mips_opts.arch == CPU_RLX5181	\
+          || mips_opts.arch == CPU_LX5280	\
+          || mips_opts.arch == CPU_RLX5281)
+	{
+	  as_bad (_("Lexra/RLX processors don't support this"));
+	  break;
+	}
       s = "swl";
       fmt = MEM12_FMT;
       offbits = (mips_opts.micromips ? 12 : 16);
       goto ld_st;
     case M_SWR_AB:
+      if (mips_opts.arch == CPU_LX4180	\
+          || mips_opts.arch == CPU_RLX4181	\
+          || mips_opts.arch == CPU_RLX4281	\
+          || mips_opts.arch == CPU_RLX5181	\
+          || mips_opts.arch == CPU_LX5280	\
+          || mips_opts.arch == CPU_RLX5281)
+	{
+	  as_bad (_("Lexra/RLX processors don't support this"));
+	  break;
+	}
       s = "swr";
       fmt = MEM12_FMT;
       offbits = (mips_opts.micromips ? 12 : 16);
@@ -13831,16 +13871,46 @@ macro (struct mips_cl_insn *ip, char *str)
       break;
 
     case M_ULH_AB:
+      if (mips_opts.arch == CPU_LX4180	\
+          || mips_opts.arch == CPU_RLX4181	\
+          || mips_opts.arch == CPU_RLX4281	\
+          || mips_opts.arch == CPU_RLX5181	\
+          || mips_opts.arch == CPU_LX5280	\
+          || mips_opts.arch == CPU_RLX5281)
+	{
+	  as_bad (_("Lexra/RLX processors don't support this"));
+	  break;
+	}
       s = "lb";
       s2 = "lbu";
       off = 1;
       goto uld_st;
     case M_ULHU_AB:
+      if (mips_opts.arch == CPU_LX4180	\
+          || mips_opts.arch == CPU_RLX4181	\
+          || mips_opts.arch == CPU_RLX4281	\
+          || mips_opts.arch == CPU_RLX5181	\
+          || mips_opts.arch == CPU_LX5280	\
+          || mips_opts.arch == CPU_RLX5281)
+	{
+	  as_bad (_("Lexra/RLX processors don't support this"));
+	  break;
+	}
       s = "lbu";
       s2 = "lbu";
       off = 1;
       goto uld_st;
     case M_ULW_AB:
+      if (mips_opts.arch == CPU_LX4180	\
+          || mips_opts.arch == CPU_RLX4181	\
+          || mips_opts.arch == CPU_RLX4281	\
+          || mips_opts.arch == CPU_RLX5181	\
+          || mips_opts.arch == CPU_LX5280	\
+          || mips_opts.arch == CPU_RLX5281)
+	{
+	  as_bad (_("Lexra/RLX processors don't support this"));
+	  break;
+	}
       s = "lwl";
       s2 = "lwr";
       offbits = (mips_opts.micromips ? 12 : 16);
@@ -13853,12 +13923,32 @@ macro (struct mips_cl_insn *ip, char *str)
       off = 7;
       goto uld_st;
     case M_USH_AB:
+      if (mips_opts.arch == CPU_LX4180	\
+          || mips_opts.arch == CPU_RLX4181	\
+          || mips_opts.arch == CPU_RLX4281	\
+          || mips_opts.arch == CPU_RLX5181	\
+          || mips_opts.arch == CPU_LX5280	\
+          || mips_opts.arch == CPU_RLX5281)
+	{
+	  as_bad (_("Lexra/RLX processors don't support this"));
+	  break;
+	}
       s = "sb";
       s2 = "sb";
       off = 1;
       ust = 1;
       goto uld_st;
     case M_USW_AB:
+      if (mips_opts.arch == CPU_LX4180	\
+          || mips_opts.arch == CPU_RLX4181	\
+          || mips_opts.arch == CPU_RLX4281	\
+          || mips_opts.arch == CPU_RLX5181	\
+          || mips_opts.arch == CPU_LX5280	\
+          || mips_opts.arch == CPU_RLX5281)
+	{
+	  as_bad (_("Lexra/RLX processors don't support this"));
+	  break;
+	}
       s = "swl";
       s2 = "swr";
       offbits = (mips_opts.micromips ? 12 : 16);
